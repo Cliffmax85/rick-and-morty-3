@@ -31,5 +31,7 @@ it('should test the dropdown', async () => {
 
     const dropdown = screen.getByRole('combobox', { name: 'Search By Character Status' })
 
-    console.log(dropdown);
+    userEvent.selectOptions(dropdown, 'dead');
+
+    await screen.findByText('Adjudicator Rick');
 })
