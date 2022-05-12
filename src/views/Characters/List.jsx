@@ -11,7 +11,6 @@ export default function List() {
     const location = useLocation();
     const status = new URLSearchParams(location.search).get('status') ?? 'all';
 
-    console.log('LOG CHAR', character);
     useEffect(() => {
     async function fetchCharacters() {
         setLoading(true);
@@ -47,7 +46,7 @@ export default function List() {
                     <option value='all'>All</option>
                     <option value='alive'>Alive</option>
                     <option value='dead'>Dead</option>
-                    <option value='unkown'>Unkown</option>
+                    <option value='unknown'>Unknown</option>
                 </select>
                 <div className="card">
                     {character.map((character) => (
