@@ -35,3 +35,18 @@ it('should test the dropdown', async () => {
 
     await screen.findByText('Adjudicator Rick');
 })
+
+it('should test initial entries', async () => {
+    render(
+        <MemoryRouter
+            initialEntries={['/character/1', '/character/2', '/character/3', '/character/4']}
+            initialIndex={3}>
+            <App />
+        </MemoryRouter>
+    );
+
+
+
+    const beth = await screen.findByText(/beth smith/i);
+    expect(beth.textContent).toEqual('Beth Smith');
+})
